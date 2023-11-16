@@ -13,7 +13,7 @@
       ./packages
       ./distrobox
       ./garbage
-#      ./unstable
+      ./unstable
       ./xserver
 #      ./power
 #      ./home
