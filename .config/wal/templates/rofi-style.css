@@ -1,0 +1,57 @@
+window {{
+  font-family: "Liberation Sans", "DejaVu Sans", "Font Awesome 5 Free";
+  margin: 0px;
+  border: 1px solid {color11};
+  background-color: rgba(29, 31, 33, 0.8);
+  border-radius: 10px;
+}}
+
+#input {{
+  margin: 5px;
+  border: none;
+  color: {color2};
+  background-color: rgba(55, 59, 65, 0.95);
+}}
+
+#inner-box {{
+  margin: 5px;
+  border: none;
+  background-color: transparent;
+}}
+
+#outer-box {{
+  margin: 5px;
+  border: none;
+  background-color: transparent;
+}}
+
+#scroll {{
+  margin: 0px;
+  border: none;
+}}
+
+#text {{
+  margin: 5px;
+  border: none;
+  color: {color2};
+}}
+
+#text:selected {{
+  margin: 5px;
+  border: none;
+  color: {color11};
+}}
+
+#entry {{
+  border: none;
+}}
+
+#entry:focus {{
+  border: none;
+}}
+
+#entry:selected {{
+  background-color: rgba(55, 59, 65, 0.95);
+  border-radius: 5px;
+  border: none;
+}}
