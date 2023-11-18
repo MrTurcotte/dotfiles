@@ -21,7 +21,7 @@ in
   programs.hyprland = {
     enable = true;
  #   package = hyprland.packages.${pkgs.system}.default;
-    xwayland.enable = false;
+    xwayland.enable = true;
   };
 
 #  imports = [ ( import "${home-manager}/nixos" ) ];
