@@ -3,13 +3,28 @@
 
 let
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz";
+
+  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
+  hyprland = (import flake-compat {
+    src = builtins.fetchTarball "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
+  }).defaultNix;
+
 in
-
-
 
 {
 
-  imports = [ ( import "${home-manager}/nixos" ) ];
+  imports = [
+    hyprland.nixosModules.default
+    ( import "${home-manager}/nixos" )
+  ];
+
+  programs.hyprland = {
+    enable = true;
+    package = hyprland.packages.${pkgs.system}.default;
+    xwayland.enable = true;
+  };
+
+#  imports = [ ( import "${home-manager}/nixos" ) ];
 
   security.pam.services.swaylock = {
     text = ''
@@ -104,10 +119,6 @@ in
     })
   ];
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
 
   services.xserver = { displayManager = { defaultSession = "hyprland"; }; };
 
