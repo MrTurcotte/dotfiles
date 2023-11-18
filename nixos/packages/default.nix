@@ -17,7 +17,7 @@
     pkgs.xss-lock
     pkgs.libnotify
     pkgs.libsForQt5.ghostwriter
-    pkgs.alacritty
+#    pkgs.alacritty
     pkgs.android-studio
     pkgs.jetbrains.idea-community
     pkgs.appimage-run

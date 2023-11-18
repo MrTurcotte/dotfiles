@@ -7,5 +7,6 @@ let
 in { 
   environment.systemPackages = with pkgs; [ 
     unstable.ventoy-full 
+    unstable.alacritty
   ]; 
 }
