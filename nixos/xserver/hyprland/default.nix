@@ -4,17 +4,17 @@
 let
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz";
 
-#  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
-#  hyprland = (import flake-compat {
-#    src = builtins.fetchTarball "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
-#  }).defaultNix;
+  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
+  hyprland = (import flake-compat {
+    src = builtins.fetchTarball "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
+  }).defaultNix;
 
 in
 
 {
 
   imports = [
-#    hyprland.nixosModules.default
+    hyprland.nixosModules.default
     ( import "${home-manager}/nixos" )
   ];
 
@@ -69,17 +69,17 @@ in
         command = "swaylock";
       }];
     };
-#  programs.waybar.enable = true;
-#  programs.waybar.package = pkgs.waybar.overrideAttrs (oa: {
-#    mesonFlags = (oa.mesonFlags or  []) ++ [ "-Dexperimental=true" ];
-#    patches = (oa.patches or []) ++ [
-#      (pkgs.fetchpatch {
-#        name = "fix waybar hyprctl";
-#        url = "https://aur.archlinux.org/cgit/aur.git/plain/hyprctl.patch?h=waybar-hyprland-git";
-#        sha256 = "sha256-pY3+9Dhi61Jo2cPnBdmn3NUTSA8bAbtgsk2ooj4y7aQ=";
-#      })
-#    ];
-#  });
+  programs.waybar.enable = true;
+  programs.waybar.package = pkgs.waybar.overrideAttrs (oa: {
+    mesonFlags = (oa.mesonFlags or  []) ++ [ "-Dexperimental=true" ];
+    patches = (oa.patches or []) ++ [
+      (pkgs.fetchpatch {
+        name = "fix waybar hyprctl";
+        url = "https://aur.archlinux.org/cgit/aur.git/plain/hyprctl.patch?h=waybar-hyprland-git";
+        sha256 = "sha256-pY3+9Dhi61Jo2cPnBdmn3NUTSA8bAbtgsk2ooj4y7aQ=";
+      })
+    ];
+  });
 
   };
 
@@ -105,7 +105,7 @@ in
     hyprland-protocols
     #    hyprland-share-picker
     xdg-desktop-portal-hyprland
-    waybar
+#    waybar
     mako
     swww
     mpvpaper
@@ -122,13 +122,13 @@ in
     gst_all_1.gst-plugins-good
   ];
 
-  nixpkgs.overlays = [
-    (self: super: {
-      waybar = super.waybar.overrideAttrs (oldAttrs: {
-        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-      });
-    })
-  ];
+#  nixpkgs.overlays = [
+#    (self: super: {
+#      waybar = super.waybar.overrideAttrs (oldAttrs: {
+#        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+#      });
+#    })
+#  ];
 
 
   services.xserver = { displayManager = { defaultSession = "hyprland"; }; };
