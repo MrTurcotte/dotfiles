@@ -74,7 +74,7 @@ in
 
   #  Packages
   environment.systemPackages = with pkgs; [
-    volnoti
+#    volnoti
     shotman
     #    flameshot
     #    cliphist

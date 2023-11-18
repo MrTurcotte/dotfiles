@@ -10,6 +10,8 @@ in {
     unstable.alacritty
     unstable.waybar
     unstable.swww
+
+    unstable.volnoti
   ]; 
   nixpkgs.overlays = [
     (self: super: {
