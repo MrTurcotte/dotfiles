@@ -94,7 +94,7 @@ in
     hyprland-protocols
     #    hyprland-share-picker
     xdg-desktop-portal-hyprland
-    waybar
+#    waybar
     mako
     swww
     mpvpaper
@@ -111,13 +111,13 @@ in
     gst_all_1.gst-plugins-good
   ];
 
-  nixpkgs.overlays = [
-    (self: super: {
-      waybar = super.waybar.overrideAttrs (oldAttrs: {
-        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-      });
-    })
-  ];
+#  nixpkgs.overlays = [
+#    (self: super: {
+#      waybar = super.waybar.overrideAttrs (oldAttrs: {
+#        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+#      });
+#    })
+#  ];
 
 
   services.xserver = { displayManager = { defaultSession = "hyprland"; }; };
