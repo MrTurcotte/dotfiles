@@ -9,6 +9,7 @@ in {
     unstable.ventoy-full 
     unstable.alacritty
     unstable.waybar
+    unstable.swww
   ]; 
   nixpkgs.overlays = [
     (self: super: {

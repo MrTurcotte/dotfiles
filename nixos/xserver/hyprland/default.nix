@@ -96,8 +96,8 @@ in
     xdg-desktop-portal-hyprland
 #    waybar
     mako
-    swww
-    mpvpaper
+#    swww
+#    mpvpaper
     wlr-randr
     wayout
     grim
