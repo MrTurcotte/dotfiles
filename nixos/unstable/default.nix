@@ -8,13 +8,13 @@ in {
   environment.systemPackages = with pkgs; [ 
     unstable.ventoy-full 
     unstable.alacritty
-#    unstable.waybar
+    unstable.waybar
   ]; 
-#  nixpkgs.overlays = [
-#    (self: super: {
-#      waybar = super.waybar.overrideAttrs (oldAttrs: {
-#        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-#      });
-#    })
-#  ];
+  nixpkgs.overlays = [
+    (self: super: {
+      waybar = super.waybar.overrideAttrs (oldAttrs: {
+        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+      });
+    })
+  ];
 }
