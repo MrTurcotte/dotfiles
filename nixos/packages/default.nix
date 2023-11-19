@@ -9,6 +9,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
+    pkgs.pywal
+    pkgs.wofi
     pkgs.fuse
     pkgs.speedcrunch
     pkgs.suricata
@@ -17,7 +19,7 @@
     pkgs.xss-lock
     pkgs.libnotify
     pkgs.libsForQt5.ghostwriter
-#    pkgs.alacritty
+    pkgs.alacritty
     pkgs.android-studio
     pkgs.jetbrains.idea-community
     pkgs.appimage-run

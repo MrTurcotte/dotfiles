@@ -5,7 +5,7 @@
   imports = [
     ./sddm-themes
     ./xdg
-    ./hyprland
+#    ./hyprland
     ./plasma
 #    ./budgie
 #    ./cinnamon

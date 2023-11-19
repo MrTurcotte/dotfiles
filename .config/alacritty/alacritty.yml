@@ -5,7 +5,7 @@ window:
     x: 6
     y: 6
 font:
-  size: 14.0
+  size: 10.0
 cursor:
   style:
     shape: Beam
