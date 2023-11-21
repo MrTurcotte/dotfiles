@@ -29,11 +29,11 @@
 
   #  Packages
   environment.systemPackages = with pkgs; [
-    pa_applet
+#    pa_applet
     pamixer
     pavucontrol
     flameshot
-    networkmanagerapplet
+#    networkmanagerapplet
     brightnessctl
     picom
     dmenu

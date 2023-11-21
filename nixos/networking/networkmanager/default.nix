@@ -3,7 +3,7 @@
 {
 
   # Networking
-  programs.nm-applet.enable = true;
+#  programs.nm-applet.enable = true;
 
   networking = {
     enableIPv6 = true;

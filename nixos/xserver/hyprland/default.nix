@@ -84,7 +84,7 @@ in
     pamixer
     pavucontrol
     gnome.gnome-screenshot
-    networkmanagerapplet
+#    networkmanagerapplet
     brightnessctl
     wofi
     xfce.thunar
