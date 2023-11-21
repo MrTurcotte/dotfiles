@@ -2,11 +2,11 @@
 
 {
   # Fonts
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     jetbrains-mono
     noto-fonts
     noto-fonts-cjk
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     liberation_ttf
     fira-code
     fira-code-symbols

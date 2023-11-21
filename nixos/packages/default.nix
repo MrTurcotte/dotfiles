@@ -31,7 +31,7 @@
 #    pkgs.devour
     pkgs.dmidecode
     pkgs.evince
-    pkgs.exa
+    pkgs.eza
 #    pkgs.gcc
     pkgs.gimp-with-plugins
     pkgs.gitFull
