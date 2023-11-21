@@ -14,7 +14,7 @@
     libsForQt5.kaccounts-integration
     libsForQt5.kaccounts-providers
     libsForQt5.kio-gdrive
-#    libsForQt5.bismuth
+    libsForQt5.bismuth
     libsForQt5.discover
     libsForQt5.packagekit-qt
     libportal-qt5
