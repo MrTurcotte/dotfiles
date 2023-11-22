@@ -35,7 +35,7 @@
       "vm.dirty_background_bytes" = 583200768;      # 556 MB (128 MB + 450 MB)
       "vm.dirty_bytes" = 851968768;                 # 812 MB (384 MB + 450 MB)
       "vm.min_free_kbytes" = 65536;                 # Minimum free memory for safety (in KB)
-      "vm.swappiness" = 0;
+      "vm.swappiness" = 10;
       "vm.vfs_cache_pressure" = 90;
 
       # Adjust dirty data management for NVMe drives

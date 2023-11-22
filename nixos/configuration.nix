@@ -5,6 +5,11 @@
 { config, pkgs, ... }:
 
 {
+
+###DANGER TEST
+#  zramTmpfs.enable = true;
+###Turns out zramTmpfs doesn't exist.  Still working on it.
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
