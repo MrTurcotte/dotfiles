@@ -2,19 +2,19 @@
 
 
 let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz";
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
 
-  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
-  hyprland = (import flake-compat {
-    src = builtins.fetchTarball "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
-  }).defaultNix;
+#  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
+#  hyprland = (import flake-compat {
+#    src = builtins.fetchTarball "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
+#  }).defaultNix;
 
 in
 
 {
 
   imports = [
-    hyprland.nixosModules.default
+#    hyprland.nixosModules.default
     ( import "${home-manager}/nixos" )
   ];
 
@@ -74,7 +74,7 @@ in
 
   #  Packages
   environment.systemPackages = with pkgs; [
-#    volnoti
+    volnoti
     shotman
     #    flameshot
     #    cliphist
@@ -84,7 +84,7 @@ in
     pamixer
     pavucontrol
     gnome.gnome-screenshot
-#    networkmanagerapplet
+    networkmanagerapplet
     brightnessctl
     wofi
     xfce.thunar
@@ -94,9 +94,9 @@ in
     hyprland-protocols
     #    hyprland-share-picker
     xdg-desktop-portal-hyprland
-#    waybar
+    waybar
     mako
-#    swww
+    swww
 #    mpvpaper
     wlr-randr
     wayout
@@ -130,15 +130,15 @@ in
 #  ];
 
 #####ORIGINAL OVERLAY
-#  nixpkgs.overlays = [
-#    (self: super: {
-#      waybar = super.waybar.overrideAttrs (oldAttrs: {
-#        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-#      });
-#    })
-#  ];
+  nixpkgs.overlays = [
+    (self: super: {
+      waybar = super.waybar.overrideAttrs (oldAttrs: {
+        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+      });
+    })
+  ];
 
 
-  services.xserver = { displayManager = { defaultSession = "hyprland"; }; };
+#  services.xserver = { displayManager = { defaultSession = "hyprland"; }; };
 
 }
