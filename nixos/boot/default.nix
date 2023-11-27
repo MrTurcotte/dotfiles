@@ -19,7 +19,7 @@
     plymouth.enable = true;
     plymouth.theme = "breeze";
     kernelParams = [ 
-      "quiet"
+#      "quiet"
       "mitigations=off" 
 #      "i915.fastboot=1"
 #      "i915.modeset=1"

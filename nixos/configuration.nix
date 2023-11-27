@@ -10,6 +10,8 @@
 #  zramTmpfs.enable = true;
 ###Turns out zramTmpfs doesn't exist.  Still working on it.
 
+  systemd.services.NetworkManager-wait-online.enable = false;
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
