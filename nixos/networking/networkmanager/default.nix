@@ -5,6 +5,8 @@
   # Networking
 #  programs.nm-applet.enable = true;
 
+  systemd.services.NetworkManager-wait-online.enable = false;
+
   networking = {
     enableIPv6 = true;
     hostName = "krypton"; # Define your hostname.

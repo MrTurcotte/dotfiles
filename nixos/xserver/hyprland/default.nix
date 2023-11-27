@@ -2,7 +2,7 @@
 
 
 let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz";
 
 #  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
 #  hyprland = (import flake-compat {
@@ -38,7 +38,7 @@ in
 #    xdg.configFile."waybar/config".source = ./waybar/dave;
 #    xdg.configFile."waybar/style.css".source = ./waybar/dave.css;
 
-    home.stateVersion = "23.05";
+    home.stateVersion = "23.11";
 
     programs.swaylock = {
       enable = true;
