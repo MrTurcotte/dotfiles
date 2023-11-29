@@ -20,8 +20,8 @@
     pkgs.libnotify
     pkgs.libsForQt5.ghostwriter
     pkgs.alacritty
-    pkgs.android-studio
-    pkgs.jetbrains.idea-community
+#    pkgs.android-studio
+#    pkgs.jetbrains.idea-community
     pkgs.appimage-run
     pkgs.bintools
     pkgs.binutils

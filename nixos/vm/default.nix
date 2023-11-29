@@ -36,7 +36,7 @@
         ovmf.enable = true;
         ovmf.packages = [ pkgs.OVMFFull.fd ];
         package = pkgs.qemu_kvm;
-        runAsRoot = false;
+#        runAsRoot = false;
       };
     };
     spiceUSBRedirection.enable = true;
