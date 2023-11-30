@@ -31,8 +31,9 @@ let
     };
 
   customTheme = builtins.isAttrs theme;
-
-  theme = themes.elegant;
+   
+  theme = themes.chili;
+#  theme = themes.elegant;
   # theme = "breeze";
 
   themeName = if customTheme then theme.pkg.name else theme;
