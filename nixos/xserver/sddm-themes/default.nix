@@ -32,7 +32,7 @@ let
 
   customTheme = builtins.isAttrs theme;
    
-  theme = themes.aerial;
+  theme = themes.sugar-dark;
 #  theme = themes.elegant;
   # theme = "breeze";
 
