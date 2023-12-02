@@ -6,9 +6,6 @@
 
 {
 
-###DANGER TEST
-#  zramTmpfs.enable = true;
-###Turns out zramTmpfs doesn't exist.  Still working on it.
 
   imports =
     [ # Include the results of the hardware scan.
@@ -31,7 +28,11 @@
       ./zramswap
       ./intel
       ./sound
+#      <nix-ld/modules/nix-ld.nix>
     ];
+
+#  programs.nix-ld.enable = true;
+#  programs.nix-ld.dev.enable = true;
 
   # Use the systemd-boot EFI boot loader.
 #  boot.loader.systemd-boot.enable = true;
