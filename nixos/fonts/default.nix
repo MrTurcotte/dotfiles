@@ -3,7 +3,6 @@
 {
   imports = [
     ./apple
-    ./apple-git
   ];
 
   # Fonts
