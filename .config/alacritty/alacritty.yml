@@ -6,6 +6,8 @@ window:
     y: 6
 font:
   size: 14.0
+  normal:
+    family: "Liga SF Mono Nerd Font"
 cursor:
   style:
     shape: Beam

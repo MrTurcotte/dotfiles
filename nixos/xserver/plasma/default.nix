@@ -9,7 +9,8 @@
   services.xserver.enable = true;
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
-  services.xserver.displayManager.defaultSession = "plasma";
+#  services.xserver.displayManager.defaultSession = "plasma";
+  services.xserver.displayManager.defaultSession = "hyprland";
 
   environment.systemPackages = with pkgs; [
     libsForQt5.kaccounts-integration
