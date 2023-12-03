@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./apple
+    ./apple-git
+  ];
+
   # Fonts
   fonts.packages = with pkgs; [
     jetbrains-mono
