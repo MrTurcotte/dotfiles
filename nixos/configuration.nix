@@ -109,7 +109,7 @@
 
   # Samba
   environment.systemPackages = [ pkgs.cifs-utils ];
-  fileSystems."/mnt/share" = {
+  fileSystems."/home/dave/share" = {
     device = "//192.168.2.44/sambashare/";
     fsType = "cifs";
     options = let
