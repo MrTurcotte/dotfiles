@@ -58,7 +58,8 @@
   i18n.defaultLocale = "en_CA.UTF-8";
 
   # Disable lid switch
-  services.logind = { lidSwitch = "lock"; };
+  services.logind = { lidSwitch = "suspend"; };
+#  services.logind = { lidSwitch = "lock"; };
 
   #  Enable Flatpak
   services.flatpak.enable = true;
