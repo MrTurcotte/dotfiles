@@ -8,7 +8,8 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs;[
+    python3
     pkgs.pywal
     pkgs.wofi
     pkgs.fuse
