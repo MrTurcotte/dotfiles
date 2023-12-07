@@ -27,7 +27,8 @@
 #      "i915.enable_psr=1"
 #      "i915.enable_dc=1"
     ];
-#    kernel.sysctl = {
+    kernel.sysctl = {
+     "net.ipv4.tcp_congestion_control" = "westwood";   
       #      "vm.dirty_background_bytes" = 16777216;
       #      "vm.dirty_bytes" = 50331648;
       #      "vm.dirty_background_bytes" = 268435456;
@@ -44,7 +45,7 @@
 #      "vm.dirty_ratio" = "10";                      # Set the ratio of dirty memory at which a process is forced to write out dirty data (10%).
 #      "vm.dirty_time" = "0";                        # Disable dirty time accounting.
 #      "vm.dirty_writeback_centisecs" = "300";       # Set the interval between two consecutive background writeback passes (300 centiseconds).
-#    };
+    };
   };
 
   # NTFS Support
