@@ -6,7 +6,7 @@
   programs.dconf.enable = true;
 
   # Add user to libvirtd group
-  users.users.dave.extraGroups = [ "libvirtd" "kvm" "qemu-libvirtd"];
+  users.users.dave.extraGroups = [ "libvirtd" "kvm" "qemu-libvirtd" ];
 
   # Install necessary packages
   environment.systemPackages = with pkgs; [
@@ -30,19 +30,19 @@
   virtualisation = {
     libvirtd = {
       enable = true;
-#      onBoot = "ignore";
+      #      onBoot = "ignore";
       qemu = {
         swtpm.enable = true;
         ovmf.enable = true;
         ovmf.packages = [ pkgs.OVMFFull.fd ];
-#        package = pkgs.qemu_kvm;
-#        runAsRoot = false;
+        #        package = pkgs.qemu_kvm;
+        #        runAsRoot = false;
       };
     };
     spiceUSBRedirection.enable = true;
   };
   services.spice-vdagentd.enable = true;
 
-#  environment.sessionVariables.LIBVIRT_DEFAULT_URI = [ "qemu:///system" ];
+  #  environment.sessionVariables.LIBVIRT_DEFAULT_URI = [ "qemu:///system" ];
 
 }

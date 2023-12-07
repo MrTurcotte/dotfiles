@@ -46,9 +46,9 @@
   };
 
   services.thermald.enable = true;
-#  powerManagement = {
-#    enable = true;
-#    powertop.enable = true;
-#  };
+  #  powerManagement = {
+  #    enable = true;
+  #    powertop.enable = true;
+  #  };
 
 }

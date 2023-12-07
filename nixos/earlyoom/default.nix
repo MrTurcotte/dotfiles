@@ -19,7 +19,7 @@
       # It helps prevent system slowdowns and freezes by intelligently killing less important processes to free up memory.
       # In this configuration, it triggers when free memory is only 15% of total RAM.
       # Adjust the freeMemThreshold value based on your system's memory usage patterns.
-      
+
     };
   };
 }

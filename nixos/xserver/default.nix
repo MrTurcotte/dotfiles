@@ -7,13 +7,13 @@
     ./xdg
     ./hyprland
     ./plasma
-#    ./budgie
-#    ./cinnamon
-#    ./deepin
-#    ./dwm
-#    ./gnome
-#    ./mate
-#    ./pantheon
+    #    ./budgie
+    #    ./cinnamon
+    #    ./deepin
+    #    ./dwm
+    #    ./gnome
+    #    ./mate
+    #    ./pantheon
   ];
 
   # Enable the X11 windowing system.

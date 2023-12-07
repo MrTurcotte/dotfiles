@@ -24,7 +24,7 @@ in {
   environment.systemPackages = [ pkgs.xorg.xhost distrobox ];
   virtualisation.podman.enable = true;
   virtualisation.podman.dockerCompat = true;
-#  environment.shellInit = ''
-#    [ -n "$DISPLAY" ] && xhost +si:localuser:$USER || true
-#  '';
+  #  environment.shellInit = ''
+  #    [ -n "$DISPLAY" ] && xhost +si:localuser:$USER || true
+  #  '';
 }

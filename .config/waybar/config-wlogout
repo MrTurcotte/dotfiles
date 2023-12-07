@@ -56,7 +56,7 @@
     // Power Menu
     "custom/exit": {
         "format": "Ω",
-        "on-click": "nwg-bar",
+        "on-click": "wlogout -b 2",
         "tooltip": false
     },
 

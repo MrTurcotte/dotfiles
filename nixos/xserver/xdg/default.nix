@@ -5,23 +5,24 @@
   # Environment Variables
   xdg.portal = {
     enable = true;
-#    xdgOpenUsePortal = true;
-#    wlr = { enable = false; };
-#    lxqt = {
-#      enable = false;
-#      styles = with pkgs;
-#        with libsForQt5; [
-#          qtstyleplugin-kvantum
-#          breeze-qt5
-#          qtcurve
-#        ];
-#    };
-    extraPortals = with pkgs; [
-#      xdg-desktop-portal-kde
-#      xdg-desktop-portal-gtk
-#      xdg-desktop-portal-wlr
-#      xdg-desktop-portal-hyprland
-    ];
+    #    xdgOpenUsePortal = true;
+    #    wlr = { enable = false; };
+    #    lxqt = {
+    #      enable = false;
+    #      styles = with pkgs;
+    #        with libsForQt5; [
+    #          qtstyleplugin-kvantum
+    #          breeze-qt5
+    #          qtcurve
+    #        ];
+    #    };
+    extraPortals = with pkgs;
+      [
+        #      xdg-desktop-portal-kde
+        #      xdg-desktop-portal-gtk
+        #      xdg-desktop-portal-wlr
+        #      xdg-desktop-portal-hyprland
+      ];
   };
 
   environment.sessionVariables = rec {

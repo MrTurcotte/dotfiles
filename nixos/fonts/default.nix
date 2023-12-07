@@ -1,9 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./apple
-  ];
+  imports = [ ./apple ];
 
   # Fonts
   fonts.packages = with pkgs; [

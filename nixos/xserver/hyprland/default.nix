@@ -1,30 +1,28 @@
 { pkgs, config, ... }:
 
-
 let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz";
+  home-manager = builtins.fetchTarball
+    "https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz";
 
-#  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
-#  hyprland = (import flake-compat {
-#    src = builtins.fetchTarball "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
-#  }).defaultNix;
+  #  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
+  #  hyprland = (import flake-compat {
+  #    src = builtins.fetchTarball "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
+  #  }).defaultNix;
 
-in
-
-{
+in {
 
   imports = [
-#    hyprland.nixosModules.default
-    ( import "${home-manager}/nixos" )
+    #    hyprland.nixosModules.default
+    (import "${home-manager}/nixos")
   ];
 
   programs.hyprland = {
     enable = true;
- #   package = hyprland.packages.${pkgs.system}.default;
+    #   package = hyprland.packages.${pkgs.system}.default;
     xwayland.enable = true;
   };
 
-#  imports = [ ( import "${home-manager}/nixos" ) ];
+  #  imports = [ ( import "${home-manager}/nixos" ) ];
 
   security.pam.services.swaylock = {
     text = ''
@@ -33,10 +31,10 @@ in
   };
 
   home-manager.users.dave = {
-#    xdg.configFile."hypr/hyprland.conf".source = ./hypr/dave.conf;
-#    xdg.configFile."rofi/style.css".source = ./rofi/dave.css;
-#    xdg.configFile."waybar/config".source = ./waybar/dave;
-#    xdg.configFile."waybar/style.css".source = ./waybar/dave.css;
+    #    xdg.configFile."hypr/hyprland.conf".source = ./hypr/dave.conf;
+    #    xdg.configFile."rofi/style.css".source = ./rofi/dave.css;
+    #    xdg.configFile."waybar/config".source = ./waybar/dave;
+    #    xdg.configFile."waybar/style.css".source = ./waybar/dave.css;
 
     home.stateVersion = "23.11";
 
@@ -74,6 +72,7 @@ in
 
   #  Packages
   environment.systemPackages = with pkgs; [
+    nwg-bar
     volnoti
     shotman
     #    flameshot
@@ -97,7 +96,7 @@ in
     waybar
     mako
     swww
-#    mpvpaper
+    #    mpvpaper
     wlr-randr
     wayout
     grim
@@ -111,25 +110,25 @@ in
     gst_all_1.gst-plugins-good
 
     #FOR WAYBAR
-#    cava
+    #    cava
   ];
 
-#####SECOND OVERLAY
-#nixpkgs.overlays = [
-#    (self: super: {
-#       waybar = super.waybar.overrideAttrs (oldAttrs: {
-#         src = super.fetchFromGitHub {
-#           owner = "Alexays";
-#           repo = "waybar";
-#           rev = "e30fba0b8f875c7f35e3173be2b9f6f3ffe3641e";
-#           hash = "sha256-9LJDA+zrHF9Mn8+W9iUw50LvO+xdT7/l80KdltPrnDo=";
-#         };
-#         mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-#       });
-#    })
-#  ];
+  #####SECOND OVERLAY
+  #nixpkgs.overlays = [
+  #    (self: super: {
+  #       waybar = super.waybar.overrideAttrs (oldAttrs: {
+  #         src = super.fetchFromGitHub {
+  #           owner = "Alexays";
+  #           repo = "waybar";
+  #           rev = "e30fba0b8f875c7f35e3173be2b9f6f3ffe3641e";
+  #           hash = "sha256-9LJDA+zrHF9Mn8+W9iUw50LvO+xdT7/l80KdltPrnDo=";
+  #         };
+  #         mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+  #       });
+  #    })
+  #  ];
 
-#####ORIGINAL OVERLAY
+  #####ORIGINAL OVERLAY
   nixpkgs.overlays = [
     (self: super: {
       waybar = super.waybar.overrideAttrs (oldAttrs: {
@@ -138,7 +137,6 @@ in
     })
   ];
 
-
-#  services.xserver = { displayManager = { defaultSession = "hyprland"; }; };
+  #  services.xserver = { displayManager = { defaultSession = "hyprland"; }; };
 
 }

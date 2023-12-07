@@ -3,25 +3,25 @@
 {
 
   # Environment Variables
-#  xdg.portal = {
-#    enable = true;
-#    xdgOpenUsePortal = true;
-#    wlr = { enable = false; };
-#    lxqt = {
-#      enable = false;
-#      styles = with pkgs;
-#        with libsForQt5; [
-#          qtstyleplugin-kvantum
-#          breeze-qt5
-#          qtcurve
-#        ];
-#    };
-#    extraPortals = with pkgs; [
-#      xdg-desktop-portal-kde
-#      #      xdg-desktop-portal-gtk
-#      xdg-desktop-portal-wlr
-#    ];
-#  };
+  #  xdg.portal = {
+  #    enable = true;
+  #    xdgOpenUsePortal = true;
+  #    wlr = { enable = false; };
+  #    lxqt = {
+  #      enable = false;
+  #      styles = with pkgs;
+  #        with libsForQt5; [
+  #          qtstyleplugin-kvantum
+  #          breeze-qt5
+  #          qtcurve
+  #        ];
+  #    };
+  #    extraPortals = with pkgs; [
+  #      xdg-desktop-portal-kde
+  #      #      xdg-desktop-portal-gtk
+  #      xdg-desktop-portal-wlr
+  #    ];
+  #  };
 
   environment.sessionVariables = rec {
     XDG_CACHE_HOME = "$HOME/.cache";

@@ -23,8 +23,8 @@ let
 
         [wifi-security]
         ${optionalString (opt.psk != null) ''
-        key-mgmt=wpa-psk
-        psk=${opt.psk}''}
+          key-mgmt=wpa-psk
+          psk=${opt.psk}''}
       '';
     };
   };

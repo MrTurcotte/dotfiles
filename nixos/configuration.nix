@@ -6,44 +6,40 @@
 
 {
 
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./boot
+    ./vm
+    ./packages
+    ./distrobox
+    ./garbage
+    #      ./unstable
+    ./xserver
+    #      ./power
+    #      ./home
+    ./networking
+    ./networking/networkmanager
+    ./earlyoom
+    ./appimage
+    ./fonts
+    ./services
+    ./zramswap
+    ./intel
+    ./sound
+    #      <nix-ld/modules/nix-ld.nix>
+  ];
 
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./boot
-      ./vm
-      ./packages
-      ./distrobox
-      ./garbage
-#      ./unstable
-      ./xserver
-#      ./power
-#      ./home
-      ./networking
-      ./networking/networkmanager
-      ./earlyoom
-      ./appimage
-      ./fonts
-      ./services
-      ./zramswap
-      ./intel
-      ./sound
-#      <nix-ld/modules/nix-ld.nix>
-    ];
-
-#  programs.nix-ld.enable = true;
-#  programs.nix-ld.dev.enable = true;
+  #  programs.nix-ld.enable = true;
+  #  programs.nix-ld.dev.enable = true;
 
   # Use the systemd-boot EFI boot loader.
-#  boot.loader.systemd-boot.enable = true;
-#  boot.loader.efi.canTouchEfiVariables = true;
- 
+  #  boot.loader.systemd-boot.enable = true;
+  #  boot.loader.efi.canTouchEfiVariables = true;
+
   # networking.hostName = "krypton"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-  
-
 
   # Allow Nix-command
   nix.settings.experimental-features = [ "nix-command flakes" ];
@@ -59,14 +55,14 @@
 
   # Disable lid switch
   services.logind = { lidSwitch = "suspend"; };
-#  services.logind = { lidSwitch = "lock"; };
+  #  services.logind = { lidSwitch = "lock"; };
 
   #  Enable Flatpak
   services.flatpak.enable = true;
 
   # Enable dbus
   services.dbus.enable = true;
-  
+
   # Don't allow mutation of users outside of the config.
   users.mutableUsers = false;
 
@@ -75,12 +71,13 @@
   # To generate a hash to put in initialHashedPassword
   # you can do this:
   # $ nix-shell --run 'mkpasswd -m SHA-512 -s' -p mkpasswd
-  users.users.root.initialHashedPassword = "$6$9m181COWHkJSzfjq$OKbKMQHEqHyO42w.5cLyGf9zxkJPFjVyFOVGdWvcUcB0yRoQDFNpRwJlJZInYuRaT6dwB3VKwMN8gxx9UcdOG/";
-
+  users.users.root.initialHashedPassword =
+    "$6$9m181COWHkJSzfjq$OKbKMQHEqHyO42w.5cLyGf9zxkJPFjVyFOVGdWvcUcB0yRoQDFNpRwJlJZInYuRaT6dwB3VKwMN8gxx9UcdOG/";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.dave = {
-    initialHashedPassword = "$6$kURAEGO4qxHXFzjX$/Yb1sws7T31a2lXnRrFPv3wPwSSLSCQjgwXfNGOy4AfqQG74oKxDnQhNiPiO1Nf02XFGgPN4F.p4r3he698K1/";
+    initialHashedPassword =
+      "$6$kURAEGO4qxHXFzjX$/Yb1sws7T31a2lXnRrFPv3wPwSSLSCQjgwXfNGOy4AfqQG74oKxDnQhNiPiO1Nf02XFGgPN4F.p4r3he698K1/";
     isNormalUser = true;
     extraGroups = [
       "disk"
@@ -93,20 +90,17 @@
       "samba"
       "smb"
     ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      firefox
-      tree
-    ];
+    packages = with pkgs; [ firefox tree ];
   };
 
   users.users.jen = {
-      initialHashedPassword = "$6$sJi8b/nrMhCj9TQU$epPXyNm9/6NprUEsSt38l.iqS0PodvKvmRjwHxzPGcX9dhvbpLownXIyb2MtDtvRYHLQsSi/a.Sw3mbfRCDrh.";
-      isNormalUser = true;
-      description = "Jen Soullier";
-      extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
-      packages = with pkgs; [
-      ];
-    };
+    initialHashedPassword =
+      "$6$sJi8b/nrMhCj9TQU$epPXyNm9/6NprUEsSt38l.iqS0PodvKvmRjwHxzPGcX9dhvbpLownXIyb2MtDtvRYHLQsSi/a.Sw3mbfRCDrh.";
+    isNormalUser = true;
+    description = "Jen Soullier";
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    packages = with pkgs; [ ];
+  };
 
   # Samba
   environment.systemPackages = [ pkgs.cifs-utils ];
@@ -126,8 +120,6 @@
 
   # Android 
   programs.adb.enable = true;
-
-
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

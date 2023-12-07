@@ -1,8 +1,5 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./alacritty
-    ./homeManager
-  ];
+  imports = [ ./alacritty ./homeManager ];
 }
