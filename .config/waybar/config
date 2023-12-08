@@ -1,10 +1,17 @@
 {
     "layer": "top",
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["custom/menu", "hyprland/workspaces"],
     "modules-center": ["clock"],
     "modules-right": ["pulseaudio", "battery#bat0","battery#bat1", "tray", "custom/exit"],
     "wlr/window": {
         "max-length": 50
+    },
+    "custom/menu": {
+        "format": "{icon}",
+        "on-click": "wofi --show drun",
+        "format-icons": {
+            "default": "⚡",
+        },
     },
     "hyprland/workspaces": {
         "format": "{icon}",

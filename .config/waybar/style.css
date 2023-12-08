@@ -117,6 +117,12 @@ button:hover {
 }
 
 /* #window,
+
+#custom-menu {
+    margin-right: 15px;
+    padding-right: 15px;
+}
+
 #workspaces {
     margin: 0 4px;
 } */
