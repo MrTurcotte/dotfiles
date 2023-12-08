@@ -26,6 +26,7 @@
     ./zramswap
     ./intel
     ./sound
+#    ./nvidia.nix
     #      <nix-ld/modules/nix-ld.nix>
   ];
 
