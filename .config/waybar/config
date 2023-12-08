@@ -7,11 +7,9 @@
         "max-length": 50
     },
     "custom/menu": {
-        "format": "{icon}",
-        "on-click": "wofi --show drun",
-        "format-icons": {
-            "default": "⚡",
-        },
+        "format": "✪",
+        "on-click": "nwg-drawer",
+        "tooltip": false,
     },
     "hyprland/workspaces": {
         "format": "{icon}",

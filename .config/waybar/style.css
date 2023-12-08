@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Liberation, FontAwesome, Roboto, Helvetica, Arial, sans-serif ;
+    font-family: SF Pro, Liberation, FontAwesome, Roboto, Helvetica, Arial, sans-serif ;
     font-size: 18px;
 }
 
@@ -118,13 +118,10 @@ button:hover {
 
 /* #window,
 
-#custom-menu {
-    margin-right: 15px;
-    padding-right: 15px;
-}
 
 #workspaces {
     margin: 0 4px;
+    margin-left: 20px;
 } */
 
 /* If workspaces is the leftmost module, omit left margin 
@@ -137,6 +134,14 @@ button:hover {
     margin-right: 0;
 }
 */
+#custom-menu {
+    margin-right: 5px;
+    padding-right: 5px;
+    color: @color11;
+    font-size: 22px
+}
+
+
 #clock {
   font-family: "SF Pro";
 }

@@ -72,6 +72,7 @@ in {
 
   #  Packages
   environment.systemPackages = with pkgs; [
+    nwg-drawer
     nwg-bar
     volnoti
     shotman
