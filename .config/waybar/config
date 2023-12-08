@@ -1,6 +1,6 @@
 {
     "layer": "top",
-    "modules-left": ["custom/menu", "hyprland/workspaces"],
+    "modules-left": ["custom/menu", "custom/chrome", "hyprland/workspaces"],
     "modules-center": ["clock"],
     "modules-right": ["pulseaudio", "battery#bat0","battery#bat1", "tray", "custom/exit"],
     "wlr/window": {
@@ -9,6 +9,11 @@
     "custom/menu": {
         "format": "✪",
         "on-click": "nwg-drawer",
+        "tooltip": false,
+    },
+    "custom/chrome": {
+        "format": "",
+        "on-click": "google-chrome-stable",
         "tooltip": false,
     },
     "hyprland/workspaces": {

@@ -116,13 +116,12 @@ button:hover {
 /*    border-radius: 15px; */
 }
 
-/* #window,
+/* #window, */
 
 
 #workspaces {
     margin: 0 4px;
-    margin-left: 20px;
-} */
+}
 
 /* If workspaces is the leftmost module, omit left margin 
 .modules-left > widget:first-child > #workspaces {
@@ -141,6 +140,12 @@ button:hover {
     font-size: 22px
 }
 
+#custom-chrome {
+    margin-right: 5px;
+    padding-right: 5px;
+    color: @color1;
+    font-size: 22px
+}
 
 #clock {
   font-family: "SF Pro";
@@ -311,6 +316,7 @@ label:focus {
 }
 
 #custom-exit {
-    color: white;
-/*    border-bottom: 3px solid rgba(236, 239, 244, 0.75); */
+    color: @color11;
+/*    color: white;
+    border-bottom: 3px solid rgba(236, 239, 244, 0.75); */
 }
