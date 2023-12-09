@@ -8,7 +8,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    protonvpn-gui
+    nixos-generators
+#    protonvpn-gui
     psutils
     psmisc
     python3
