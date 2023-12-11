@@ -12,7 +12,7 @@
 #    protonvpn-gui
     psutils
     psmisc
-    python3
+    python3Full
     pywal
     wofi
     fuse
