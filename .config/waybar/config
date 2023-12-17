@@ -19,7 +19,7 @@
     },
     "hyprland/workspaces": {
         "all-outputs": false,
-        "format": "{name}",
+        "format": "{icon}",
         "on-click": "activate",
         "format-icons": {
 //          "default": "-", 
