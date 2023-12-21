@@ -9,11 +9,11 @@ window {
 
 /* Inner bar container, surrounds buttons */
 #inner-box {
-	background-color: #8E443B;
+	background-color: #43A3B8;
 	border-radius: 10px;
 	border-style: none;
 	border-width: 1px;
-	border-color: #8E443B;
+	border-color: #43A3B8;
 	padding: 5px;
 	margin: 5px
 }
