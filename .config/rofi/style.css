@@ -1,7 +1,7 @@
 window {
   font-family: "Liberation Sans", "DejaVu Sans", "Font Awesome 5 Free";
   margin: 0px;
-  border: 1px solid #526692;
+  border: 1px solid #A1A2CE;
   background-color: rgba(29, 31, 33, 0.8);
   border-radius: 10px;
 }
@@ -9,7 +9,7 @@ window {
 #input {
   margin: 5px;
   border: none;
-  color: #395B8C;
+  color: #DCACBB;
   background-color: rgba(55, 59, 65, 0.95);
 }
 
@@ -33,13 +33,13 @@ window {
 #text {
   margin: 5px;
   border: none;
-  color: #395B8C;
+  color: #DCACBB;
 }
 
 #text:selected {
   margin: 5px;
   border: none;
-  color: #526692;
+  color: #A1A2CE;
 }
 
 #entry {
