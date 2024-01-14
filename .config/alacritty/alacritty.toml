@@ -1,0 +1,23 @@
+import = ["/home/dave/.cache/wal/colors-alacritty.toml"]
+
+[cursor]
+blink_interval = 500
+thickness = 0.15
+unfocused_hollow = true
+
+[cursor.style]
+blinking = "Always"
+shape = "Beam"
+
+[font]
+size = 14.0
+
+[font.normal]
+family = "Liga SF Mono Nerd Font"
+
+[window]
+opacity = 0.7
+
+[window.padding]
+x = 10
+y = 10
