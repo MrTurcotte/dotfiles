@@ -1,6 +1,6 @@
 {
     "layer": "top",
-    "output": "eDP-1",
+/*    "output": "eDP-1" , */
     "modules-left": ["custom/menu", "custom/chrome", "hyprland/workspaces"],
     "modules-center": ["clock"],
     "modules-right": ["pulseaudio", "battery#bat0","battery#bat1", "tray", "custom/exit"],
@@ -26,13 +26,13 @@
           "active": "-",
         },
         "sort-by-number": true,
-        "persistent-workspaces": {
+/*        "persistent-workspaces": {
             "1": ["eDP-1"],
         },
         "persistent_workspaces": {
             "1": ["eDP-1"],
         }
-    }, 
+*/    }, 
     "battery#bat0": {
         "bat": "BAT0",
         "format": "{capacity}% {icon}",
