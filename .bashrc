@@ -4,6 +4,9 @@ PS1="\n$PS1"
 
 PATH="/home/dave/.local/bin:/home/dave/.bin:/home/dave/Programs/android-studio/bin:$PATH"
 
+alias tolga-batt='clear && echo "Battery: $(acpi -b | awk '\''{print $3}'\'')" && echo '' && echo "Battery Percentage: $(acpi -b | awk '\''{print $4}'\'')" && echo '' && echo "Remaining Time: $(acpi -b | awk '\''{print $5,$6,$7 == "until" ? "until fully charged" : $7}'\'')"'
+alias tolga-origbatt="clear && echo Status: && acpi -b | gawk -F ',' -P '{ print $1 }' | gawk -P '{ print $3 }' && echo '' && echo Current Battery: && acpi -b | gawk -F ',' -P '{ print $2 }' | gawk -P '{ print $1 }' && echo '' && echo Remaining Time: && acpi -b | gawk -P '{ print $5 }'"
+
 alias pacman='sudo pacman'
 alias rm='rm -i'
 alias mv='mv -i'

@@ -1,7 +1,11 @@
 window {
   font-family: "Liberation Sans", "DejaVu Sans", "Font Awesome 5 Free";
   margin: 0px;
+<<<<<<< HEAD
   border: 1px solid #907356;
+=======
+  border: 1px solid #D8A740;
+>>>>>>> a4c66a9b29379ebf0f6077b6be35c8174900d7bb
   background-color: rgba(29, 31, 33, 0.8);
   border-radius: 10px;
 }
@@ -9,7 +13,11 @@ window {
 #input {
   margin: 5px;
   border: none;
+<<<<<<< HEAD
   color: #D45F05;
+=======
+  color: #96724D;
+>>>>>>> a4c66a9b29379ebf0f6077b6be35c8174900d7bb
   background-color: rgba(55, 59, 65, 0.95);
 }
 
@@ -33,13 +41,21 @@ window {
 #text {
   margin: 5px;
   border: none;
+<<<<<<< HEAD
   color: #D45F05;
+=======
+  color: #96724D;
+>>>>>>> a4c66a9b29379ebf0f6077b6be35c8174900d7bb
 }
 
 #text:selected {
   margin: 5px;
   border: none;
+<<<<<<< HEAD
   color: #907356;
+=======
+  color: #D8A740;
+>>>>>>> a4c66a9b29379ebf0f6077b6be35c8174900d7bb
 }
 
 #entry {
