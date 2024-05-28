@@ -26,19 +26,8 @@
           "active": "-",
         },
         "sort-by-number": true,
-<<<<<<< HEAD
     },
     "battery#BAT0": {
-=======
-/*        "persistent-workspaces": {
-            "1": ["eDP-1"],
-        },
-        "persistent_workspaces": {
-            "1": ["eDP-1"],
-        }
-*/    }, 
-    "battery#bat0": {
->>>>>>> a4c66a9b29379ebf0f6077b6be35c8174900d7bb
         "bat": "BAT0",
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
