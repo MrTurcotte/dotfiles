@@ -1,9 +1,9 @@
 {
     "layer": "top",
-    "output": "eDP-1",
+/*    "output": "eDP-1" , */
     "modules-left": ["custom/menu", "custom/chrome", "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "battery#bat0","battery#bat1", "tray", "custom/exit"],
+    "modules-right": ["pulseaudio", "battery#BAT0", "battery#bat1", "tray", "custom/exit"],
     "wlr/window": {
         "max-length": 50
     },
@@ -26,25 +26,20 @@
           "active": "-",
         },
         "sort-by-number": true,
-        "persistent-workspaces": {
-            "1": ["eDP-1"],
-        },
-        "persistent_workspaces": {
-            "1": ["eDP-1"],
-        }
-    }, 
-    "battery#bat0": {
+    },
+    "battery#BAT0": {
         "bat": "BAT0",
         "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
         "format-icons": ["", "", "", "", ""]
     },
-    "battery#bat1": {
+    "battery#BAT1": {
         "bat": "BAT1",
         "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
         "format-icons": ["", "", "", "", ""]
     },
     "clock": {
-//        "format-alt": "{:%a, %d. %b  %H:%M}"
       "format": "{:%A, %B %d, %Y - %I:%M %p}"
     },
     "tray": {

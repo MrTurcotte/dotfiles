@@ -10,10 +10,10 @@ blinking = "Always"
 shape = "Beam"
 
 [font]
-size = 12.0
+size = 10.0
 
-# [font.normal]
-# family = "Liberation"
+[font.normal]
+family = "Liga SF Mono Nerd Font"
 
 [window]
 opacity = 0.7
