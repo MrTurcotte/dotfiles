@@ -1,6 +1,6 @@
 ignore-empty-password
-font=Ubuntu
-image="$HOME/.lockscreen"
+font=Liberation
+image="/tmp/lockscreeny.jpg"
 
 clock
 timestr=%R
