@@ -3,7 +3,7 @@
 /*    "output": "eDP-1" , */
     "modules-left": ["custom/menu", "custom/chrome", "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "battery#BAT0", "tray", "custom/exit"],
+    "modules-right": ["pulseaudio", "battery#BAT0", "battery#BAT1", "tray", "custom/exit"],
     "wlr/window": {
         "max-length": 50
     },
