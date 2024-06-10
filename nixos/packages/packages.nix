@@ -3,58 +3,118 @@
 {
   #  Packages
   environment.systemPackages = with pkgs; [
-    google-chrome
+    # d1x-rebirth-full
+    # d2x-rebirth-full
+    # dxx-rebirth
+    # waybar
+    alacritty  
+    android-studio
+    bintools
+    binutils
+    blueberry
+    brightnessctl
+    cifs-utils
+    deluge
+    elegant-sddm
+    evince
+    ffmpeg
+    fuse
     gimp-with-plugins
-    sxiv
-    vscodium
-    xorg.xhost
-    lxqt.lxqt-policykit
+    gitFull
+    gnu-cobol
+    google-chrome
+    gparted
+    grim
     grimblast
-    libnotify
-    pywal
-    libreoffice-fresh
-    onlyoffice-bin
-    psmisc
-    nwg-drawer
-    nwg-bar
-    volnoti
-    sway-contrib.grimshot
+    gst_all_1.gst-plugins-good
+    htop
+    hyprland-protocols
+    imagemagick
     kooha
+    kotlin
+    libnotify
+    libreoffice-fresh
+    libsecret
+    lxqt.lxqt-policykit
+    mako
+    mpv
+    mutt
+    neofetch
+    networkmanagerapplet
+    newsboat
+    nixfmt-rfc-style
+    nixos-generators
+    nwg-bar
+    nwg-drawer
+    onlyoffice-bin
     pamixer
     pavucontrol
-    networkmanagerapplet
-    brightnessctl
-    wofi
-    xfontsel
-    sysstat
-    hyprland-protocols
-    xdg-desktop-portal-hyprland
-    waybar
-    mako
-    swww
-    wlr-randr
-    wayout
-    grim
-    slurp
-    wayshot
+    psmisc
+    pywal
     simplescreenrecorder
-    wlogout
-    waylock
-    blueberry
-    wl-clipboard
-    gst_all_1.gst-plugins-good
-    gparted
+    slurp
+    snes9x
+    snes9x-gtk
+    speedcrunch
+    spotify
+    sway-contrib.grimshot
+    swayidle
+    swaylock-effects
+    swww
+    sxiv
+    sysstat
     texliveFull
-    gnu-cobol
-    android-studio
+    vim
+    volnoti
+    vscodium-fhs
+    waylock
+    wayout
+    wayshot
+    wget
+    wl-clipboard
+    wlogout
+    wlr-randr
+    wofi
+    wordgrinder
+    xdg-desktop-portal-hyprland
+    xfontsel
+    xorg.xhost
+    youtube-dl
   ];
 
-  nixpkgs.overlays = [
-    (self: super: {
-      waybar = super.waybar.overrideAttrs (oldAttrs: {
-        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-      });
-    })
-  ];
+  programs = {
+    firefox = {
+      enable = true;
+      policies = {
+        CaptivePortal = false;
+        DisableFirefoxAccounts = false;
+        DisableFirefoxStudies = true;
+        DisablePocket = true;
+        DisableTelemetry = true;
+        FirefoxHome = {
+          Pocket = false;
+          Snippets = false;
+        };
+        UserMessaging = {
+          ExtensionRecommendations = false;
+          SkipOnboarding = true;
+        };
+      };
+    };
+    adb.enable = true;
+    steam.enable = true;
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
+    waybar.enable = true;
+  };
+
+  # Enable Flatpak
+  services.flatpak.enable = true;
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
 
 }

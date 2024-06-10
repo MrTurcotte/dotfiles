@@ -10,9 +10,14 @@
       ./hardware-configuration.nix
       ./users/dave.nix
       ./packages/packages.nix
-      ./packages/hyprland.nix
+      # ./packages/hyprland.nix
       ./fonts/fonts.nix
       ./intel/intel.nix
+      ./distrobox/distrobox.nix
+      ./appimage/appimage.nix
+      ./vm/vm.nix
+      ./tweaks/tweaks.nix
+      ./systemd/systemd.nix
     ];
 
   # ZRAM
@@ -21,6 +26,13 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # PAM Working With Swaylock
+  security.pam.services.swaylock = {
+    text = ''
+      auth include login
+    '';
+  };
 
   # Plymouth
 #  boot.plymouth.enable = true;
@@ -50,8 +62,6 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
-  # Android ADB
-  programs.adb.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -60,11 +70,22 @@
   services.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
-  # Configure keymap in X11
-  services.xserver = {
-    xkb.layout = "us";
-    xkb.variant = "";
+  services.displayManager.sddm.theme = "breeze";
+  services.displayManager.sddm.settings = {
+    General = {
+      InputMethod = "";
+    };
+    Theme = {
+      FacesDir = "/home/Faces/";
+      ThemeDir = "/home/sddm/";
+    };
   };
+
+  # Configure keymap in X11
+  # services.xserver = {
+  #   xkb.layout = "us";
+  #   xkb.variant = "";
+  # };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -94,39 +115,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
-#  # Define a user account. Don't forget to set a password with ‘passwd’.
-#  users.users.dave = {
-#    isNormalUser = true;
-#    description = "David Turcotte";
-#    extraGroups = [ "networkmanager" "wheel" ];
-#    packages = with pkgs; [
-#      kate
-#    #  thunderbird
-#    ];
-#  };
-
-  # Enable Hyprland
-  programs.hyprland.enable = true;
-
-  # Enable Flatpak
-  services.flatpak.enable = true;
-
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  wget
-  git
-  vim
-  alacritty  
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

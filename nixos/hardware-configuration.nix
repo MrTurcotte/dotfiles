@@ -3,6 +3,10 @@
 # to /etc/nixos/configuration.nix instead.
 { config, lib, pkgs, modulesPath, ... }:
 
+let
+  name = "dave" ;
+in 
+
 {
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
@@ -32,6 +36,11 @@
   fileSystems."/storage" =
     { device = "/dev/disk/by-uuid/1f7d7284-9a2b-46e1-9a99-ccc27ac1db3d";
       fsType = "xfs";
+    };
+
+  fileSystems."/home/${name}/Storage" =
+    { device = "/storage";
+      options = [ "bind" ];
     };
 
   swapDevices = [ ];
