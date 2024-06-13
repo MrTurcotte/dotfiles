@@ -18,7 +18,17 @@
       ./vm/vm.nix
       ./tweaks/tweaks.nix
       ./systemd/systemd.nix
+      # ./containers/nextcloud.nix
+      ./containers/stirling.nix
+      # ./containers/debian.nix
     ];
+
+  boot.supportedFilesystems = [ "ntfs" ];
+  boot.tmp.useTmpfs = true;
+
+  nix.settings.experimental-features = [ "nix-command flakes" ];
+
+  services.envfs.enable = true;
 
   # ZRAM
   zramSwap.enable = true;

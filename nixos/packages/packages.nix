@@ -7,6 +7,10 @@
     # d2x-rebirth-full
     # dxx-rebirth
     # waybar
+    # (import ./docker)
+    # (import ./7zz.nix)
+    vulkan-tools
+    vulkan-headers
     alacritty  
     android-studio
     bintools
@@ -53,7 +57,6 @@
     pywal
     simplescreenrecorder
     slurp
-    snes9x
     snes9x-gtk
     speedcrunch
     spotify
@@ -66,6 +69,7 @@
     texliveFull
     vim
     volnoti
+    libretro.bsnes-hd
     vscodium-fhs
     waylock
     wayout
