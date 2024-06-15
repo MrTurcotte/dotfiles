@@ -3,14 +3,12 @@
 {
   #  Packages
   environment.systemPackages = with pkgs; [
+    # (import ./7zz.nix)
+    # (import ./docker)
     # d1x-rebirth-full
     # d2x-rebirth-full
     # dxx-rebirth
     # waybar
-    # (import ./docker)
-    # (import ./7zz.nix)
-    vulkan-tools
-    vulkan-headers
     alacritty  
     android-studio
     bintools
@@ -38,6 +36,7 @@
     kotlin
     libnotify
     libreoffice-fresh
+    libretro.bsnes-hd
     libsecret
     lxqt.lxqt-policykit
     mako
@@ -69,8 +68,9 @@
     texliveFull
     vim
     volnoti
-    libretro.bsnes-hd
     vscodium-fhs
+    vulkan-headers
+    vulkan-tools
     waylock
     wayout
     wayshot

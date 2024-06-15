@@ -5,9 +5,8 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+  imports = [
+      ./hardware-configuration-tweaks.nix
       ./users/dave.nix
       ./packages/packages.nix
       # ./packages/hyprland.nix
@@ -21,6 +20,7 @@
       # ./containers/nextcloud.nix
       ./containers/stirling.nix
       # ./containers/debian.nix
+      ./environment/environment.nix
     ];
 
   boot.supportedFilesystems = [ "ntfs" ];
