@@ -9,6 +9,9 @@
     # d2x-rebirth-full
     # dxx-rebirth
     # waybar
+    python312Packages.mysql-connector
+    python312Packages.pip
+    python3
     alacritty  
     android-studio
     bintools
@@ -120,5 +123,11 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Enable MySQL
+  services.mysql = {
+    enable = true;
+    package = pkgs.mariadb;
+    user = "dave";
+  };
 
 }
