@@ -25,6 +25,7 @@ exec-once = lxqt-policykit-agent
 #exec-once = /usr/lib/polkit-kde-authentication-agent-1
 exec-once = nm-applet
 #exec-once = swww init 
+exec-once = sh /home/dave/.local/bin/wallswitch.sh /tmp/lockscreen.jpg
 exec-once = sh /home/dave/.local/bin/wallpaper.sh
 #exec-once = sh /home/dave/.local/bin/tolga.sh
 exec-once = sh /home/dave/.local/bin/hyprlock.sh
@@ -32,8 +33,6 @@ exec-once = sh /home/dave/.local/bin/hyprlock.sh
 exec-once = brightnessctl set 1515
 exec-once = waybar
 exec-once = swayidle before-sleep 'swaylock --image=/tmp/lockscreen.jpg'
-
-exec-once = [float; size 50% 17%; center] alacritty -e bash /home/dave/.local/bin/terminalClock.sh
 
 # Source a file (multi-file configs)
 source = ~/.config/hypr/colors-hyprland.conf
@@ -156,9 +155,7 @@ animations {
 
 master {
     # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-    # new_is_master = false
-    always_center_master = true
-    new_status = slave
+    new_is_master = false
 }
 
 gestures {
@@ -193,7 +190,7 @@ bind = SUPER, F, togglefloating,
 bind = SUPER, B, exec, MOZ_ENABLE_WAYLAND=0 firefox
 bind = SUPER, W, exec, /home/dave/.local/bin/wallswitch.sh
 bind = SUPER, K, exec, /home/dave/.local/bin/wallswitch.sh /home/dave/Wallpapers/kirby.jpg
-bind = SUPER, C, exec, [float; size 30% 15%; center] alacritty -e bash /home/dave/.local/bin/terminalClock.sh print
+bind = SUPER, C, exec, /home/dave/.local/bin/wallswitch.sh /home/dave/Wallpapers/cosmic-tornado.jpg
 bind = SUPER SHIFT, W, exec, /home/dave/.local/bin/wallgen.sh
 bind = SUPER, M, exec, appimage-run ~/Applications/beeper.AppImage
 bind = CTRL ALT, K, exec, swaylock --image=/tmp/lockscreen.jpg

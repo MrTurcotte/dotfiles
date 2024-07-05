@@ -21,7 +21,15 @@
       ./containers/stirling.nix
       # ./containers/debian.nix
       ./environment/environment.nix
-    ];
+  ];
+
+  # Compile everything with O3 and native architecture
+  # nixpkgs.overlays = [
+  #   (import ./overlays/cflags.nix)
+  # ];
+  # nix.extraOptions = ''
+  #   build-flags = -march=native -mtune=native -O3
+  # '';
 
   boot.supportedFilesystems = [ "ntfs" ];
   boot.tmp.useTmpfs = true;
@@ -74,12 +82,17 @@
 
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
+  # Enable the GNOME Desktop Environment.
+  # services.xserver.desktopManager.gnome.enable = true;
+  
+  # Enable SDDM
+  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.enable = true;
   services.displayManager.sddm.theme = "breeze";
   services.displayManager.sddm.settings = {
     General = {

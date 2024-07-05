@@ -1,5 +1,15 @@
 { pkgs, ... }:
 
+let
+  pkgs = import <nixpkgs> {};
+
+  tte = pkgs.callPackage (pkgs.fetchFromGitHub {
+    owner = "ChrisBuilds";
+    repo = "terminaltexteffects";
+    rev = "0ba769c3308cf2782b6cb1ff3d6da5ed6a430c94";
+    hash = "sha256-1JWDpdlwV1QCzGtDkSC9+rQvTqKbTnQ//8phLGhHHKo=";
+  }) {};
+in 
 {
   #  Packages
   environment.systemPackages = with pkgs; [
@@ -9,6 +19,12 @@
     # d2x-rebirth-full
     # dxx-rebirth
     # waybar
+    geany
+    gnome.gnome-themes-extra
+    wl-screenrec
+    figlet
+    tte
+    jetbrains.pycharm-community-bin
     python312Packages.mysql-connector
     python312Packages.pip
     python3
@@ -20,6 +36,7 @@
     brightnessctl
     cifs-utils
     deluge
+    duf
     elegant-sddm
     evince
     ffmpeg
@@ -39,7 +56,7 @@
     kotlin
     libnotify
     libreoffice-fresh
-    libretro.bsnes-hd
+    # libretro.bsnes-hd
     libsecret
     lxqt.lxqt-policykit
     mako
@@ -59,7 +76,7 @@
     pywal
     simplescreenrecorder
     slurp
-    snes9x-gtk
+    # snes9x-gtk
     speedcrunch
     spotify
     sway-contrib.grimshot
