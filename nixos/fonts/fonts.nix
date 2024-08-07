@@ -14,6 +14,7 @@
     #    nerdfonts
     corefonts
     font-awesome
+    texlivePackages.tex-gyre
   ];
 
   nixpkgs.config.packageOverrides = pkgs: {

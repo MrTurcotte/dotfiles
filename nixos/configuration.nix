@@ -6,21 +6,29 @@
 
 {
   imports = [
-      ./hardware-configuration-tweaks.nix
-      ./users/dave.nix
-      ./packages/packages.nix
-      # ./packages/hyprland.nix
-      ./fonts/fonts.nix
-      ./intel/intel.nix
-      ./distrobox/distrobox.nix
-      ./appimage/appimage.nix
-      ./vm/vm.nix
-      ./tweaks/tweaks.nix
-      ./systemd/systemd.nix
-      # ./containers/nextcloud.nix
-      ./containers/stirling.nix
       # ./containers/debian.nix
+      # ./containers/nextcloud.nix
+      # ./containers/ollama.nix
+      # ./packages/hyprland.nix
+      # ./packages/hyprspace.nix
+      ./appimage/appimage.nix
+      ./battery/battery.nix
+      # ./containers/stirling.nix
+      ./containers/whoogle.nix
+      ./distrobox/distrobox.nix
       ./environment/environment.nix
+      ./fonts/fonts.nix
+      ./garbage/garbage.nix
+      ./hardware-configuration-tweaks.nix
+      ./intel/intel.nix
+      ./packages/packages.nix
+      # ./plymouth/plymouth.nix
+      ./systemd/systemd.nix
+      ./tweaks/tweaks.nix
+      # ./unstable/unstable.nix
+      ./usb/usb.nix
+      ./users/dave.nix
+      ./vm/vm.nix
   ];
 
   # Compile everything with O3 and native architecture
@@ -31,11 +39,11 @@
   #   build-flags = -march=native -mtune=native -O3
   # '';
 
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot.supportedFilesystems = [ "ntfs" "xfs" "ext4" "fat32" "f2fs" ];
   boot.tmp.useTmpfs = true;
 
   nix.settings.experimental-features = [ "nix-command flakes" ];
-
+  
   services.envfs.enable = true;
 
   # ZRAM
@@ -86,6 +94,10 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.desktopManager.plasma5.enable = true;
+
+  # Enable the COSMIC Desktop Environment.
+  # services.desktopManager.cosmic.enable = true;
+  # services.displayManager.cosmic-greeter.enable = true;
 
   # Enable the GNOME Desktop Environment.
   # services.xserver.desktopManager.gnome.enable = true;

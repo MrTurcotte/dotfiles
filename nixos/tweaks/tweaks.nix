@@ -7,10 +7,15 @@
     "vm.dirty_background_bytes" = 268435456;
   };
 
-  nix.settings.max-jobs = 15; 
+  nix.settings.max-jobs = 3; 
 
-  powerManagement.cpuFreqGovernor = "performance";
+  # powerManagement.cpuFreqGovernor = "performance";
 
-  boot.tmp.useTmpfs = true;
+  # boot.tmp.useTmpfs = true;
+
+  services.logind = {
+    # extraConfig = "HandlePowerKey=suspend";
+    lidSwitch = "ignore";
+  }; 
 
 }

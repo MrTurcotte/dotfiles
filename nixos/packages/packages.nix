@@ -13,12 +13,22 @@ in
 {
   #  Packages
   environment.systemPackages = with pkgs; [
+    rubyPackages_3_3.glib2
+    python312Packages.pygobject3
+    glib
+    glibc
     # (import ./7zz.nix)
     # (import ./docker)
     # d1x-rebirth-full
     # d2x-rebirth-full
     # dxx-rebirth
     # waybar
+    avizo
+    gcc
+    libstdcxx5
+    oterm
+    pkgs.onlyoffice-bin
+    xfce.thunar
     geany
     gnome.gnome-themes-extra
     wl-screenrec
@@ -52,7 +62,7 @@ in
     htop
     hyprland-protocols
     imagemagick
-    kooha
+    # kooha
     kotlin
     libnotify
     libreoffice-fresh
@@ -103,7 +113,7 @@ in
     xdg-desktop-portal-hyprland
     xfontsel
     xorg.xhost
-    youtube-dl
+    # youtube-dl
   ];
 
   programs = {
@@ -132,6 +142,7 @@ in
       xwayland.enable = true;
     };
     waybar.enable = true;
+    gamemode.enable = true;
   };
 
   # Enable Flatpak
