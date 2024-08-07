@@ -1,0 +1,27 @@
+#! /run/current-system/sw/bin/bash
+
+
+PATH="/home/dave/.local/bin:/home/dave/.bin:/home/dave/Programs/android-studio/bin:$PATH"
+
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+# alias ls='exa'
+alias rb='sudo nixos-rebuild'
+alias list-generations='sudo nix-env --list-generations --profile /nix/var/nix/profiles/system'
+alias configure='sudo nano /etc/nixos/configuration.nix'
+alias addpkgs='sudo nano /etc/nixos/packages/default.nix'
+alias update='sudo nix-channel --update'
+alias upgrade='sudo nixos-rebuild switch --upgrade'
+alias nixpkgs='nix search nixpkgs'
+alias garbage='sudo nix-collect-garbage -d'
+alias beeper='appimage-run Applications/beeper.AppImage'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias themeConfig='sudo nano /etc/nixos/xserver/sddm-themes/default.nix'
+killall() {
+	kill $(pidof $1)
+}
+
+#cat ~/neofetch.file
+#neofetch
+#change
