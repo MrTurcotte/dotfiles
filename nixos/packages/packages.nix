@@ -13,16 +13,6 @@ in
 {
   #  Packages
   environment.systemPackages = with pkgs; [
-    rubyPackages_3_3.glib2
-    python312Packages.pygobject3
-    glib
-    glibc
-    # (import ./7zz.nix)
-    # (import ./docker)
-    # d1x-rebirth-full
-    # d2x-rebirth-full
-    # dxx-rebirth
-    # waybar
     avizo
     gcc
     libstdcxx5

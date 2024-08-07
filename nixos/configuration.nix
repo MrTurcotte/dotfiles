@@ -39,7 +39,7 @@
   #   build-flags = -march=native -mtune=native -O3
   # '';
 
-  boot.supportedFilesystems = [ "ntfs" "xfs" "ext4" "fat32" "f2fs" ];
+  boot.supportedFilesystems = [ "ntfs" "xfs" "ext4" "fat32" "f2fs" "btrfs" ];
   boot.tmp.useTmpfs = true;
 
   nix.settings.experimental-features = [ "nix-command flakes" ];
@@ -93,7 +93,8 @@
   # services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.desktopManager.plasma5.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Enable the COSMIC Desktop Environment.
   # services.desktopManager.cosmic.enable = true;
