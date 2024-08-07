@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: SF Pro, Liberation, FontAwesome, Roboto, Helvetica, Arial, sans-serif ;
+    font-family: SF Pro, Liberation, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 18px;
 }
 
@@ -253,7 +253,8 @@ label:focus {
     background-color: #eb4d4b;
 }
 
-#tray {
+tray {
+    -gtk-icon-effect: highlight;
 }
 
 #tray > .passive {

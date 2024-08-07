@@ -1,134 +1,155 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running `nixos-help`).
+# and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
 
 {
-
-  imports = [ # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ./boot
-    ./vm
-    ./packages
-    ./distrobox
-    ./garbage
-    #      ./unstable
-    ./xserver
-    #      ./power
-    #      ./home
-    ./networking
-    ./networking/networkmanager
-    ./earlyoom
-    ./appimage
-    ./fonts
-    ./services
-    ./zramswap
-    ./intel
-    ./sound
-#    ./fingerprint.nix
-#    ./nvidia.nix
-    #      <nix-ld/modules/nix-ld.nix>
+  imports = [
+      # ./containers/debian.nix
+      # ./containers/nextcloud.nix
+      # ./containers/ollama.nix
+      # ./packages/hyprland.nix
+      # ./packages/hyprspace.nix
+      ./appimage/appimage.nix
+      ./battery/battery.nix
+      # ./containers/stirling.nix
+      ./containers/whoogle.nix
+      ./distrobox/distrobox.nix
+      ./environment/environment.nix
+      ./fonts/fonts.nix
+      ./garbage/garbage.nix
+      ./hardware-configuration-tweaks.nix
+      ./intel/intel.nix
+      ./packages/packages.nix
+      # ./plymouth/plymouth.nix
+      ./systemd/systemd.nix
+      ./tweaks/tweaks.nix
+      # ./unstable/unstable.nix
+      ./usb/usb.nix
+      ./users/dave.nix
+      ./vm/vm.nix
   ];
 
-  #  programs.nix-ld.enable = true;
-  #  programs.nix-ld.dev.enable = true;
+  # Compile everything with O3 and native architecture
+  # nixpkgs.overlays = [
+  #   (import ./overlays/cflags.nix)
+  # ];
+  # nix.extraOptions = ''
+  #   build-flags = -march=native -mtune=native -O3
+  # '';
 
-  # Use the systemd-boot EFI boot loader.
-  #  boot.loader.systemd-boot.enable = true;
-  #  boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems = [ "ntfs" "xfs" "ext4" "fat32" "f2fs" ];
+  boot.tmp.useTmpfs = true;
 
-  # networking.hostName = "krypton"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-  # Allow Nix-command
   nix.settings.experimental-features = [ "nix-command flakes" ];
+  
+  services.envfs.enable = true;
+
+  # ZRAM
+  zramSwap.enable = true;
+
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  # PAM Working With Swaylock
+  security.pam.services.swaylock = {
+    text = ''
+      auth include login
+    '';
+  };
+
+  # Plymouth
+#  boot.plymouth.enable = true;
+#  boot.plymouth.theme = "bgrt";
+#  boot.initrd.verbose = false;
+#  boot.consoleLogLevel = 0;
+#  boot.kernelParams = [ "quiet" "udev.log_level=0" ]; 
+
+  networking.hostName = "krypton"; # Define your hostname.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  # Enable networking
+  networking.networkmanager.enable = true;
+
+  # Bluetooth
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+
 
   # Set your time zone.
   time.timeZone = "America/Toronto";
 
-  # Filesystem Stuff
-  services.envfs.enable = true;
-
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
-  # Disable lid switch
-#  services.logind = { lidSwitch = "suspend"; };
-  services.logind = { lidSwitch = "lock"; };
 
-  #  Enable Flatpak
-  services.flatpak.enable = true;
+  # Enable the X11 windowing system.
+  # services.xserver.enable = true;
 
-  # Enable dbus
-  services.dbus.enable = true;
+  # Enable the KDE Plasma Desktop Environment.
+  services.xserver.desktopManager.plasma5.enable = true;
 
-  # Don't allow mutation of users outside of the config.
-  users.mutableUsers = false;
+  # Enable the COSMIC Desktop Environment.
+  # services.desktopManager.cosmic.enable = true;
+  # services.displayManager.cosmic-greeter.enable = true;
 
-  # Set a root password, consider using initialHashedPassword instead.
-  #
-  # To generate a hash to put in initialHashedPassword
-  # you can do this:
-  # $ nix-shell --run 'mkpasswd -m SHA-512 -s' -p mkpasswd
-  users.users.root.initialHashedPassword =
-    "$6$9m181COWHkJSzfjq$OKbKMQHEqHyO42w.5cLyGf9zxkJPFjVyFOVGdWvcUcB0yRoQDFNpRwJlJZInYuRaT6dwB3VKwMN8gxx9UcdOG/";
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.dave = {
-    initialHashedPassword =
-      "$6$kURAEGO4qxHXFzjX$/Yb1sws7T31a2lXnRrFPv3wPwSSLSCQjgwXfNGOy4AfqQG74oKxDnQhNiPiO1Nf02XFGgPN4F.p4r3he698K1/";
-    isNormalUser = true;
-    extraGroups = [
-      "disk"
-      "udev"
-      "docker"
-      "networkmanager"
-      "wheel"
-      "libvirtd"
-      "adbusers"
-      "samba"
-      "smb"
-    ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [ firefox tree ];
+  # Enable the GNOME Desktop Environment.
+  # services.xserver.desktopManager.gnome.enable = true;
+  
+  # Enable SDDM
+  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.theme = "breeze";
+  services.displayManager.sddm.settings = {
+    General = {
+      InputMethod = "";
+    };
+    Theme = {
+      FacesDir = "/home/Faces/";
+      ThemeDir = "/home/sddm/";
+    };
   };
 
-  users.users.jen = {
-    initialHashedPassword =
-      "$6$sJi8b/nrMhCj9TQU$epPXyNm9/6NprUEsSt38l.iqS0PodvKvmRjwHxzPGcX9dhvbpLownXIyb2MtDtvRYHLQsSi/a.Sw3mbfRCDrh.";
-    isNormalUser = true;
-    description = "Jen Soullier";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
-    packages = with pkgs; [ ];
+  # Configure keymap in X11
+  # services.xserver = {
+  #   xkb.layout = "us";
+  #   xkb.variant = "";
+  # };
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
   };
 
-  # Samba
-  environment.systemPackages = [ pkgs.cifs-utils ];
-  fileSystems."/home/dave/share" = {
-    device = "//192.168.2.44/sambashare/";
-    fsType = "cifs";
-    options = let
-      # this line prevents hanging on network split
-      automount_opts =
-        "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
 
-    in [
-      "${automount_opts},credentials=/home/dave/smb-secrets,uid=1000,gid=100"
-    ];
-    # options = [ "credentials=/etc/nixos/smb-secrets,uid=1000,gid=100" ];
+  # Enable sound with pipewire.
+  sound.enable = true;
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
   };
 
-  # Android 
-  programs.adb.enable = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  # environment.systemPackages = with pkgs; [
-  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #   wget
-  # ];
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -149,18 +170,12 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
-  # on your system were taken. It's perfectly fine and recommended to leave
+  # on your system were taken. It‘s perfectly fine and recommended to leave
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
 
 }
-
