@@ -1,6 +1,6 @@
 ignore-empty-password
 font=Liberation
-image="/tmp/lockscreen.jpg"
+image="/tmp/lockscreeny.jpg"
 
 clock
 timestr=%R
@@ -19,12 +19,12 @@ indicator-radius=240
 indicator-thickness=20
 indicator-caps-lock
 
-key-hl-color=#F29950
+key-hl-color=#D8A740
 
 separator-color=00000000
 
 inside-color=00000099
-inside-clear-color=#F29950
+inside-clear-color=#D8A740
 inside-caps-lock-color=009ddc00
 inside-ver-color=d9d8d800
 inside-wrong-color=ee2e2400
@@ -36,18 +36,18 @@ ring-ver-color=231f20D9
 ring-wrong-color=231f20D9
 
 line-color=00000000
-line-clear-color=#F29950
+line-clear-color=#D8A740
 line-caps-lock-color=009ddcFF
 line-ver-color=d9d8d8FF
 line-wrong-color=ee2e24FF
 
-text-clear-color=#F29950
+text-clear-color=#D8A740
 text-ver-color=d9d8d800
 text-wrong-color=ee2e2400
-text-color=#F29950
+text-color=#D8A740
 
 bs-hl-color=ee2e24FF
-caps-lock-key-hl-color=#F29950
+caps-lock-key-hl-color=#D8A740
 caps-lock-bs-hl-color=ee2e24FF
 disable-caps-lock-text
 text-caps-lock-color=009ddc
