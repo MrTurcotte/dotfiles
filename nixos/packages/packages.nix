@@ -13,23 +13,9 @@ in
 {
   #  Packages
   environment.systemPackages = with pkgs; [
-    avizo
-    gcc
-    libstdcxx5
-    oterm
-    pkgs.onlyoffice-bin
-    xfce.thunar
-    geany
-    gnome.gnome-themes-extra
-    wl-screenrec
-    figlet
-    tte
-    jetbrains.pycharm-community-bin
-    python312Packages.mysql-connector
-    python312Packages.pip
-    python3
     alacritty  
     android-studio
+    avizo
     bintools
     binutils
     blueberry
@@ -40,9 +26,13 @@ in
     elegant-sddm
     evince
     ffmpeg
+    figlet
     fuse
+    gcc
+    geany
     gimp-with-plugins
     gitFull
+    gnome.gnome-themes-extra
     gnu-cobol
     google-chrome
     gparted
@@ -52,12 +42,12 @@ in
     htop
     hyprland-protocols
     imagemagick
-    # kooha
+    jetbrains.pycharm-community-bin
     kotlin
     libnotify
     libreoffice-fresh
-    # libretro.bsnes-hd
     libsecret
+    libstdcxx5
     lxqt.lxqt-policykit
     mako
     mpv
@@ -70,13 +60,17 @@ in
     nwg-bar
     nwg-drawer
     onlyoffice-bin
+    oterm
     pamixer
     pavucontrol
+    pkgs.onlyoffice-bin
     psmisc
+    python3
+    python312Packages.mysql-connector
+    python312Packages.pip
     pywal
     simplescreenrecorder
     slurp
-    # snes9x-gtk
     speedcrunch
     spotify
     sway-contrib.grimshot
@@ -86,6 +80,7 @@ in
     sxiv
     sysstat
     texliveFull
+    tte
     vim
     volnoti
     vscodium-fhs
@@ -96,14 +91,15 @@ in
     wayshot
     wget
     wl-clipboard
+    wl-screenrec
     wlogout
     wlr-randr
     wofi
     wordgrinder
     xdg-desktop-portal-hyprland
+    xfce.thunar
     xfontsel
     xorg.xhost
-    # youtube-dl
   ];
 
   programs = {

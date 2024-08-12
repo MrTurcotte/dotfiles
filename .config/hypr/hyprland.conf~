@@ -191,7 +191,7 @@ bind = SUPER, F, togglefloating,
 bind = SUPER, B, exec, MOZ_ENABLE_WAYLAND=0 firefox
 bind = SUPER, W, exec, /home/dave/.local/bin/wallswitch.sh
 bind = SUPER, K, exec, /home/dave/.local/bin/wallswitch.sh /home/dave/Wallpapers/kirby.jpg
-bind = SUPER, C, exec, [float; size 30% 15%; center] alacritty -e bash /home/dave/.local/bin/terminalClock.sh wipe
+bind = SUPER, C, exec, [float; size 30% 15%; center] alacritty -e bash /home/dave/.local/bin/terminalClock.sh waves
 bind = SUPER SHIFT, W, exec, /home/dave/.local/bin/wallgen.sh
 # bind = SUPER, M, exec, appimage-run ~/Applications/beeper.AppImage
 bind = CTRL ALT, K, exec, swaylock --image=/tmp/lockscreen.jpg

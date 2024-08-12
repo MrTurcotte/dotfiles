@@ -52,7 +52,7 @@
 
   # ZRAM
   zramSwap.enable = true;
-  # zramSwap.memoryPercent = 15;
+  zramSwap.memoryPercent = 15;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

@@ -1,0 +1,17 @@
+include /home/dave/.nano/*.nanorc
+
+set autoindent
+set linenumbers
+# set nonewlines
+set backup
+set zap
+set titlecolor bold,white
+set numbercolor bold,white
+set tabsize 4
+set tabstospaces
+set softwrap
+set quickblank
+set magic
+set emptyline
+set boldtext
+set backupdir /home/dave/.nano-backup
