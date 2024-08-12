@@ -20,7 +20,7 @@
       InputMethod = "";
     };
     Theme = {
-     FacesDir = "/home/Faces/";
+     # FacesDir = "/home/Faces/";
      ThemeDir = "/home/sddm/";
     };
   };

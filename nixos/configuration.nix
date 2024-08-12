@@ -19,9 +19,11 @@
       ./containers/whoogle.nix
       ./distrobox/distrobox.nix
       ./environment/environment.nix
+      ./flatpak/flatpak.nix
       ./fonts/fonts.nix
       ./garbage/garbage.nix
       ./gui/gui.nix
+      ./gui/sddm-avatar.nix
       ./hardware-configuration-tweaks.nix
       ./intel/intel.nix
       # ./nano/nano.nix
