@@ -1,0 +1,28 @@
+{{
+    "dark": {{
+        "accent": "{color1}",
+        "background": "{background}",
+        "block": "{color7}",
+        "cursor": "{color15}",
+        "emphasis": "{color3}",
+        "error": "{color1}",
+        "foreground": "{foreground}",
+        "heading": "{color6}",
+        "link": "{color4}",
+        "markup": "{color2}",
+        "selection": "{color12}"
+    }},
+    "light": {{
+        "accent": "{color1}",
+        "background": "{background}",
+        "block": "{color7}",
+        "cursor": "{color15}",
+        "emphasis": "{color3}",
+        "error": "{color1}",
+        "foreground": "{foreground}",
+        "heading": "{color6}",
+        "link": "{color4}",
+        "markup": "{color2}",
+        "selection": "{color12}"
+    }}
+}}

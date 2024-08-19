@@ -1,57 +1,57 @@
-window {
+window {{
   font-family: "Liberation Sans", "DejaVu Sans", "Font Awesome 5 Free";
   margin: 0px;
-  border: 1px solid #3E7BC2;
+  border: 1px solid {color11};
   background-color: rgba(29, 31, 33, 0.8);
   border-radius: 10px;
-}
+}}
 
-#input {
+#input {{
   margin: 5px;
   border: none;
-  color: #4175B8;
+  color: {color2};
   background-color: rgba(55, 59, 65, 0.95);
-}
+}}
 
-#inner-box {
+#inner-box {{
   margin: 5px;
   border: none;
   background-color: transparent;
-}
+}}
 
-#outer-box {
+#outer-box {{
   margin: 5px;
   border: none;
   background-color: transparent;
-}
+}}
 
-#scroll {
+#scroll {{
   margin: 0px;
   border: none;
-}
+}}
 
-#text {
+#text {{
   margin: 5px;
   border: none;
-  color: #4175B8;
-}
+  color: {color2};
+}}
 
-#text:selected {
+#text:selected {{
   margin: 5px;
   border: none;
-  color: #3E7BC2;
-}
+  color: {color11};
+}}
 
-#entry {
+#entry {{
   border: none;
-}
+}}
 
-#entry:focus {
+#entry:focus {{
   border: none;
-}
+}}
 
-#entry:selected {
+#entry:selected {{
   background-color: rgba(55, 59, 65, 0.95);
   border-radius: 5px;
   border: none;
-}
+}}
