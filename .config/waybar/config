@@ -4,6 +4,7 @@
     "modules-left": ["custom/menu", "custom/chrome", "hyprland/workspaces"],
     "modules-center": ["clock"],
     "modules-right": ["pulseaudio", "battery#BAT0", "battery#BAT1", "tray", "custom/exit"],
+//  "battery#BAT0"
 //  "battery#BAT1",
     "wlr/window": {
         "max-length": 50
@@ -27,6 +28,11 @@
           "active": "-",
         },
         "sort-by-number": true,
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-icons": ["", "", "", "", ""]
     },
     "battery#BAT0": {
         "bat": "BAT0",

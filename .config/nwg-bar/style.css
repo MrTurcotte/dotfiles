@@ -5,7 +5,7 @@ window {
 /* Outer bar container, takes all the window width/height */
 #outer-box {
 	margin: 0px;
-	background-color: #3E7BC2;
+	background-color: #116297;
 	border-radius: 10px;
 }
 
@@ -15,7 +15,7 @@ window {
 	border-radius: 10px;
 	border-style: none;
 	border-width: 1px;
-	border-color: #3E7BC2;
+	border-color: #116297;
 	padding: 5px;
 	margin: 5px
 }

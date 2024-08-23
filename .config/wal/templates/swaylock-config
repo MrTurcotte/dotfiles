@@ -1,6 +1,6 @@
 ignore-empty-password
 font=Liberation
-image="/tmp/lockscreeny.jpg"
+image="/tmp/lockscreen.jpg"
 
 clock
 timestr=%R
