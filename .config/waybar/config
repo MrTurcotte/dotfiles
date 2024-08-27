@@ -47,7 +47,8 @@
         "format-icons": ["", "", "", "", ""]
     },
     "clock": {
-      "format": "{:%A, %B %d, %Y - %I:%M %p}"
+      "format": "{:%A, %B %d, %Y - %I:%M %p}",
+      "tooltip": false
     },
     "tray": {
         "icon-size": 21,
