@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Liberation, FontAwesome, Roboto; /* SF Pro, Arial, sans-serif*/
+    font-family: "PT Sans", "Red Hat Text", "Font Awesome 6 Free Solid", "Font Awesome 6 Free Regular", "Font Awesome 6 Brands Regular"; /*  "Cascadia Code", "PT Sans", SF Mono;  JetBrainsMono Nerd Font Mono, Liberation, FontAwesome, Roboto;  SF Pro, Arial, sans-serif */
     font-size: 18px;
 }
 
@@ -137,7 +137,7 @@ button:hover {
     margin-right: 5px;
     padding-right: 5px;
     color: @color11;
-    font-size: 22px
+/*    font-size: 18px */
 }
 
 #custom-chrome {
@@ -148,7 +148,7 @@ button:hover {
 }
 
 #clock {
-  font-family: "SF Pro";
+  /* font-family: "SF Pro"; */
   padding: 0px 20px 0px 20px;
   border-radius: 30px 0px 30px 0px;
   background-color: @color11; 
@@ -254,6 +254,7 @@ label:focus {
 }
 
 tray {
+/*    font-family: sans; */
     -gtk-icon-effect: highlight;
 }
 

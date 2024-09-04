@@ -15,7 +15,7 @@
         "tooltip": false,
     },
     "custom/chrome": {
-        "format": "",
+        "format": "<span size='12pt'></span>",
         "on-click": "google-chrome-stable",
         "tooltip": false,
     },
@@ -30,19 +30,19 @@
         "sort-by-number": true,
     },
     "battery": {
-        "format": "{capacity}% {icon}",
+        "format": "{capacity}% <span size='12pt'>{icon}</span>",
         "format-charging": "{capacity}% ",
         "format-icons": ["", "", "", "", ""]
     },
     "battery#BAT0": {
         "bat": "BAT0",
-        "format": "{capacity}% {icon}",
+        "format": "{capacity}% <span size='12pt'>{icon}</span>",
         "format-charging": "{capacity}% ",
         "format-icons": ["", "", "", "", ""]
     },
     "battery#BAT1": {
         "bat": "BAT1",
-        "format": "{capacity}% {icon}",
+        "format": "{capacity}% <span size='12pt'>{icon}</span>",
         "format-charging": "{capacity}% ",
         "format-icons": ["", "", "", "", ""]
     },
@@ -56,12 +56,12 @@
     },
 
     "pulseaudio": {
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format": "{volume}% <span size='12pt'>{icon}</span> {format_source}",
+        "format-bluetooth": "{volume}% <span size='12pt'>{icon}</span> {format_source}",
+        "format-bluetooth-muted": "<span size='12pt'> </span><span size='12pt'>{icon}</span> {format_source}",
+        "format-muted": "<span size='12pt'> </span>{format_source}",
+        "format-source": "  {volume}% <span size='12pt'></span>",
+        "format-source-muted": " <span size='12pt'></span>",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
