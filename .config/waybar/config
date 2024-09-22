@@ -19,15 +19,24 @@
         "on-click": "google-chrome-stable",
         "tooltip": false,
     },
+    "wlr/workspaces": {
+        "format": "{name}",
+        "command": "/home/dave/.local/bin/qtileWorkspaces.sh",
+        "interval": 10
+    },
     "hyprland/workspaces": {
         "all-outputs": false,
-        "format": "{name}",
+        "format": "{icon}",
         "on-click": "activate",
         "format-icons": {
-//          "default": "-", 
-          "active": "-",
+/*          "default": "",  
+          "active": "",
+          "urgent": "", */
         },
         "sort-by-number": true,
+        "persistent-workspaces": {
+            "1": "",
+        },
     },
     "battery": {
         "format": "{capacity}% <span size='12pt'>{icon}</span>",
@@ -48,7 +57,31 @@
     },
     "clock": {
       "format": "{:%A, %B %d, %Y - %I:%M %p}",
-      "tooltip": false
+      "tooltip": true,
+      "tooltip-format": "<tt><small>{calendar}</small></tt>",
+      "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 4,
+                    "weeks-pos"     : "",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffffff'>{}</span>",
+                              "days":       "<span color='#ffffff'>{}</span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#cdcdcd'>{}</span>",
+                              "today":      "<span color='#3f3f3f' background='#ffffff'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+            "on-click": "shift_down",
+            "on-click-right": "shift_up",
+            "on-click-middle": "shift_reset",
+/*                    "on-click-right": "mode",
+                    "on-scroll-up": "tz_up",
+                    "on-scroll-down": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+*/                    }
     },
     "tray": {
         "icon-size": 21,
