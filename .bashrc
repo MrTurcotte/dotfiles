@@ -7,6 +7,8 @@ PATH="/home/dave/.local/bin:/home/dave/.bin:/home/dave/Programs/android-studio/b
 alias tolga-batt='clear && echo "Battery: $(acpi -b | awk '\''{print $3}'\'')" && echo '' && echo "Battery Percentage: $(acpi -b | awk '\''{print $4}'\'')" && echo '' && echo "Remaining Time: $(acpi -b | awk '\''{print $5,$6,$7 == "until" ? "until fully charged" : $7}'\'')"'
 alias tolga-origbatt="clear && echo Status: && acpi -b | gawk -F ',' -P '{ print $1 }' | gawk -P '{ print $3 }' && echo '' && echo Current Battery: && acpi -b | gawk -F ',' -P '{ print $2 }' | gawk -P '{ print $1 }' && echo '' && echo Remaining Time: && acpi -b | gawk -P '{ print $5 }'"
 
+alias fastfetch='dave=$(find $HOME/logos/* | shuf -n 1) && fastfetch --logo-recache --logo $dave'
+alias grep='grep --color=auto'
 alias pacman='sudo pacman'
 alias pacman-autoremove='sudo pacman -R $(pacman -Qdtq)'
 alias autoremove='paru -R $(paru -Qdtq)'
@@ -42,3 +44,5 @@ alias witCopy='wit COPY --split'
 PS1='[\u@\h \w] $ '
 PS1='\[[37m\][\u@\[[36m\]\h \[[37m\]\w] $ '
 PS1='\[[37m\][\u@\h \[[36m\]\w\[[37m\]] $ '
+
+fastfetch
